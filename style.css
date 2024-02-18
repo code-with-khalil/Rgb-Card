@@ -1,0 +1,113 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1c1c;
+}
+.card-main{
+    position: relative;
+    margin: 20px;
+    height: 350px;
+    width: 200px;
+    border-radius: 10px;
+    transition: 500ms;
+    cursor: pointer;
+
+}
+.card-main:hover{
+    transform: scale(1.1);
+}
+.card-main::before,
+.card-main::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    background:  linear-gradient(35deg,#fb0094,#0000ff,#00ff00,#b3ff00,#ff0000,#fb0094,#0000ff,#00ff00,#b0fc00,#ff0000);
+    background-size: 400%;
+    border-radius: 10px;
+    z-index: -1;
+    animation: scale 30s linear infinite alternate;
+}
+.card-main::after{
+    filter: blur(25px);
+}
+.card-main::before{
+    filter: blur(25px);
+}
+@keyframes scale {
+    0%{
+        background-position:  0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.head{
+    height: 35%;
+    width: 100%;
+}
+.head img{
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-main .body{
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    color: #f1f1f1;
+    background: #464444b7;
+
+}
+.b-date{
+    padding-top: 5px;
+    color: #fb0094;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 14px;
+}
+.b-title{
+    color: #b76aff;
+    margin: 5px 0px;
+}
+.b-para{
+    color: #ffffff;
+    margin: 0px 10px;
+    text-align: start;
+}
+.card-main .footer{
+    height: 15%;
+    width: 100%;
+    font-size: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #464444b7;
+    color: #b76aff;
+    text-align: center;
+    gap: 25px;
+}
+.f-1,.f-2,.f-3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
